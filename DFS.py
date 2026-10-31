@@ -22,7 +22,7 @@ def _visitar(grafo, no, destino, anterior):
 
 
 if __name__ == "__main__":
-    origem, destino = "LABTEC", "LAB203"
+    origem, destino = "LABTEC", "BAN_MSC"
 
     anterior = dfs(arestas, origem, destino)
     caminho = reconstruir_caminho(anterior, destino)
