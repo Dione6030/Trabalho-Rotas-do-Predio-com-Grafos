@@ -12,4 +12,6 @@ def carregar_grafo(caminho):
 
 rotas = "arestas.txt"
 arestas = carregar_grafo(rotas)
-print(arestas)
+
+if __name__ == "__main__":
+    print(arestas)
