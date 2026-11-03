@@ -9,21 +9,21 @@ API em FastAPI que calcula rotas entre as portas do prédio do UniSenac Gonçalv
 
 ## Unidade do peso
 
-O peso de cada aresta é a distância entre duas portas em **metros (m)**.
-O custo de uma rota é a soma dos pesos das arestas percorridas.
+O peso de cada aresta é a distância entre duas portas em **metros (m)**, o custo de uma rota é a soma dos pesos das arestas percorridas.
 
 ## Como rodar
 
-Pré-requisito: Python 3 instalado.
+Pré-requisito: Python 3 instalado.\
+Recomendado utilizar o venv dentro da pasta do projeto.
 
 ```powershell
 python -m venv .venv
-.venv\Scripts\Activate.ps1
+Windows: .venv\Scripts\Activate.ps1
+Mac ou Linux: .venv/bin/activate
+-----------------------------------------
 python -m pip install -r requirements.txt
 uvicorn api:app --reload
 ```
-
-No Mac/Linux, ative o venv com `source .venv/bin/activate`.
 
 Execute o `uvicorn` dentro da pasta do projeto, o arquivo `arestas.txt` é lido pelo caminho relativo. Depois acesse a documentação interativa em http://127.0.0.1:8000/docs
 
