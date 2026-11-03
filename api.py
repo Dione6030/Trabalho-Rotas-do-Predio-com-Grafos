@@ -28,6 +28,7 @@ def portas():
 
 @app.get("/vizinhos/{porta}")
 def vizinhos(porta: str):
+    porta = porta.upper()
     if porta not in grafo:
         raise HTTPException(404, "Porta não encontrada")
     return [{"porta": p, "peso": w}
