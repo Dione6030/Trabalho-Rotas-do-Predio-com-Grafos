@@ -17,7 +17,7 @@ def bfs(grafo, origem, destino):
                 anterior[w] = v     # guarda que cheguei em w vindo de v
                 fila.append(w)      # w entra no fim da fila
     caminho = reconstruir_caminho(anterior, destino)   # volta do destino até a origem seguindo 'anterior'
-    return caminho, calcular_custo(grafo, caminho), len(anterior)   # ["LABTEC", "PATIO1", ..., "BAN_MSC"], 47, 22 (descobertos)
+    return caminho, calcular_custo(grafo, caminho), len(anterior)   # ["LABTEC", "PATIO1", ..., "BAN_MSC"], custo: 47 m, visitados: 22
 
 
 def main():
@@ -47,7 +47,7 @@ def dfs(grafo, origem, destino):
     anterior = {origem: None}       # de onde cheguei; também funciona como "já visitei"
     _visitar(grafo, origem, destino, anterior)   # preenche 'anterior' por recursão (não precisa do retorno True/False)
     caminho = reconstruir_caminho(anterior, destino)
-    return caminho, calcular_custo(grafo, caminho), len(anterior)   # ["LABTEC", "PATIO1", ..., "BAN_MSC"], 47, 12
+    return caminho, calcular_custo(grafo, caminho), len(anterior)   # ["LABTEC", "PATIO1", ..., "BAN_MSC"], custo: 47 m, visitados: 12
 
 
 def _visitar(grafo, no, destino, anterior):
@@ -118,7 +118,7 @@ def gulosa(grafo, origem, destino, h=None):
                 heapq.heappush(fronteira, (h(vizinho), vizinho))   # entra no heap com prioridade = h(vizinho)
 
     caminho = reconstruir_caminho(anterior, destino)
-    return caminho, calcular_custo(grafo, caminho), len(anterior)   # ["LABTEC", "PATIO1", ..., "BAN_MSC"], 47, 11
+    return caminho, calcular_custo(grafo, caminho), len(anterior)   # ["LABTEC", "PATIO1", ..., "BAN_MSC"], custo: 47 m, visitados: 11
 
 
 if __name__ == "__main__":
@@ -162,7 +162,7 @@ def dijkstra(grafo, origem, destino):
         relaxar_vizinhos(grafo, atual, distancia, anterior, fila)   # tenta melhorar a distância dos vizinhos
 
     caminho = reconstruir_caminho(anterior, destino)
-    return caminho, distancia[destino], len(finalizadas)   # ["LABTEC", "LAB201", ..., "BAN_MSC"], 33, 12
+    return caminho, distancia[destino], len(finalizadas)   # ["LABTEC", "LAB201", ..., "BAN_MSC"], custo: 33 m, nós finalizados: 12
 
 if __name__ == "__main__":
 
